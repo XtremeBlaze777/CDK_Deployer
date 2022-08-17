@@ -1,5 +1,6 @@
 #!/bin/bash
 
+python3 cdk.json-fix.py
 cdk bootstrap
 
 echo "How many stacks will you be deploying? (enter 0 if none) "
