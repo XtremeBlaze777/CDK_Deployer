@@ -1,11 +1,10 @@
 #!/bin/bash
 
-STACKLIST=()
-
 cdk bootstrap
 
 echo "How many stacks will you be deploying? (enter 0 if none) "
 read STACKNUM
+STACKLIST=()
 
 for i in $(eval echo "{1..$STACKNUM}")
 do
@@ -16,7 +15,6 @@ done
 
 for STACK in ${STACKLIST[@]}
 do
-	sleep 2
 	echo "How many parameters does $STACK take? (Enter 0 if none) "
 	read PARAMS
 	
@@ -33,7 +31,6 @@ do
 			COMMAND+=" --parameters $NAME=$VALUE"
 		done
 	fi
-	sleep 2
 	echo "Deploying $STACK"
 	sleep 2
 	eval $COMMAND

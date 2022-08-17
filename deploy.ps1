@@ -1,7 +1,7 @@
 cdk bootstrap
 
-$STACKLIST = @()
 $STACKNUM = Read-Host "How many stacks will you be deploying? (enter 0 if none)"
+$STACKLIST = @()
 
 for ($i = 1; $i -le $STACKNUM; $i++) {
 	$TMP = Read-Host "Name of Stack $i"
