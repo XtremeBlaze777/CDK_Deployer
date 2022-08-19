@@ -1,4 +1,4 @@
-python cdk.json-fix.py
+python cdk.json-fix.py windows
 cdk bootstrap
 
 $STACKNUM = Read-Host "How many stacks will you be deploying? (enter 0 if none)"
