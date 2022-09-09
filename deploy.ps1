@@ -1,4 +1,8 @@
 python cdk.json-fix.py windows
+if ( $LastExitCode -eq 2 ) {
+	exit
+}
+
 cdk bootstrap
 
 $STACKNUM = Read-Host "How many stacks will you be deploying? (enter 0 if none)"
