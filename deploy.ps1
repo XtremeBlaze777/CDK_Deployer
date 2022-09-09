@@ -27,8 +27,9 @@ foreach ($STACK in $STACKLIST) {
 			$COMMAND+=" --parameters $STACK`:$NAME=$VALUE"
 		}
 	}
-	Write-Output "Deploying $STACK"
-	Start-Sleep -Seconds 2
 }
+
+Write-Output "Deploying your CDK project"
+Start-Sleep -Seconds 2
 
 Invoke-Expression $COMMAND
