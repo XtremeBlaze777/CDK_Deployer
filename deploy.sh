@@ -15,7 +15,7 @@ do
 	echo "Name of Stack $i: "
 	read TMP
 	STACKLIST+=( $TMP )
-	# COMMAND+=
+	COMMAND+=" $TMP"
 done
 
 for STACK in ${STACKLIST[@]}
@@ -32,10 +32,11 @@ do
 			echo "Enter $NAME's value: "
 			read VALUE
 
-			COMMAND+=" --parameters $NAME=$VALUE"
+			COMMAND+=" --parameters $STACK:$NAME=$VALUE"
 		done
 	fi
-	echo "Deploying $STACK"
-	sleep 2
-	eval $COMMAND
 done
+
+echo "Deploying your CDK project"
+sleep 2
+eval $COMMAND
